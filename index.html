@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- ── SEO básico ──────────────────────────────────────────── -->
+  <title>Bruno Albín | Ingeniero en Informática Avanzada</title>
+  <meta name="description" content="Portfolio de Bruno Albín, estudiante de Ingeniería en Informática Avanzada. Desarrollo fullstack con Python, JavaScript, React, Docker y más. Apasionado por resolver problemas complejos con código limpio." />
+  <meta name="author" content="Bruno Albín" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://brunoalbin23.github.io/mi-portfolio/" />
+
+  <!-- ── Open Graph ───────────────────────────────────────────── -->
+  <meta property="og:type"         content="website" />
+  <meta property="og:url"          content="https://brunoalbin23.github.io/mi-portfolio/" />
+  <meta property="og:title"        content="Bruno Albín | Ingeniero en Informática Avanzada" />
+  <meta property="og:description"  content="Portfolio de Bruno Albín, estudiante de Ingeniería en Informática Avanzada. Desarrollo fullstack, Python, JavaScript, React, Docker y más." />
+  <meta property="og:image"        content="https://brunoalbin23.github.io/mi-portfolio/assets/img/bruno-albin.jpg" />
+  <meta property="og:image:alt"    content="Bruno Albín — Estudiante de Ingeniería en Informática Avanzada" />
+  <meta property="og:locale"       content="es_ES" />
+  <meta property="og:site_name"    content="Bruno Albín — Portfolio" />
+
+  <!-- ── Twitter Card ─────────────────────────────────────────── -->
+  <meta name="twitter:card"        content="summary" />
+  <meta name="twitter:url"         content="https://brunoalbin23.github.io/mi-portfolio/" />
+  <meta name="twitter:title"       content="Bruno Albín | Ingeniero en Informática Avanzada" />
+  <meta name="twitter:description" content="Portfolio de Bruno Albín, estudiante de Ingeniería en Informática Avanzada. Desarrollo fullstack, Python, JavaScript y más." />
+  <meta name="twitter:image"       content="https://brunoalbin23.github.io/mi-portfolio/assets/img/bruno-albin.jpg" />
+
+  <!-- ── Favicon ──────────────────────────────────────────────── -->
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <meta name="theme-color" content="#060d1f" />
+
+  <!-- ── DNS prefetch para recursos externos ──────────────────── -->
+  <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+  <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
+  <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com" />
+
+  <!-- ── Schema.org Person ────────────────────────────────────── -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Bruno Albín",
+    "url": "https://brunoalbin23.github.io/mi-portfolio/",
+    "jobTitle": "Estudiante de Ingeniería en Informática Avanzada",
+    "description": "Desarrollador fullstack apasionado por construir soluciones elegantes a problemas complejos.",
+    "image": "https://brunoalbin23.github.io/mi-portfolio/assets/img/bruno-albin.jpg",
+    "sameAs": [
+      "https://github.com/brunoalbin23",
+      "https://uy.linkedin.com/in/bruno-alb%C3%ADn-36843b2a7",
+      "https://instagram.com/bruno_albin23"
+    ]
+  }
+  </script>
+
+  <!-- ── Fonts: Google Fonts con display=swap (no bloquea render) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,300;0,400;0,500;0,700;1,400&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- ── Font Awesome: carga no bloqueante ────────────────────── -->
+  <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" /></noscript>
+
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+
+<!-- enlace de accesibilidad: visible al recibir foco con Tab -->
+<a href="#hero" class="skip-nav">Saltar al contenido principal</a>
+
+<!-- cursor personalizado (solo desktop, oculto en táctil por CSS) -->
+<div id="cur-dot" aria-hidden="true"></div>
+<div id="cur-ring" aria-hidden="true"></div>
+
+<!-- barra de navegación -->
+<nav id="nav" aria-label="Navegación principal">
+  <a href="#hero" class="nav-logo">&lt;<span>dev</span>/&gt;</a>
+  <ul class="nav-links" id="navLinks" role="list">
+    <li><a href="#about"    data-n="01." data-s="about">Sobre mí</a></li>
+    <li><a href="#skills"   data-n="02." data-s="skills">Skills</a></li>
+    <li><a href="#projects" data-n="03." data-s="projects">Proyectos</a></li>
+    <li><a href="#contact"  data-n="04." data-s="contact" class="nav-cta">Contacto</a></li>
+  </ul>
+  <button id="ham" aria-label="Abrir menú" aria-expanded="false" aria-controls="navLinks">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- hero — lo primero que se ve al entrar -->
+<section id="hero">
+  <canvas id="matrix"></canvas>
+
+  <div class="container">
+    <div class="hero-inner">
+      <p class="hero-hello">Hola mundo, soy</p>
+
+      <h1 class="hero-name">
+        <span class="line1">Bruno</span>
+        <span class="line2 glitch" data-txt="Albín.">Albín.</span>
+      </h1>
+
+      <div class="hero-role">
+        <span class="role-prefix">&gt;&nbsp;</span>
+        <span id="typed-out"></span>
+        <span class="type-cur"></span>
+      </div>
+
+      <p class="hero-desc">
+        Estudiante de <strong>5to año de Ingeniería en Informática </strong> apasionado
+        por construir soluciones elegantes a problemas complejos.
+        Del algoritmo al producto final.
+      </p>
+
+      <div class="hero-btns">
+        <a href="#projects" class="btn btn-primary">
+          <i class="fas fa-terminal"></i> ./ver-proyectos
+        </a>
+        <a href="docs/cv.pdf" download="CV-Bruno-Albin.pdf" rel="noopener noreferrer" class="btn btn-outline">
+          <i class="fas fa-file-code"></i> Descargar CV
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-scroll">
+    <span>scroll</span>
+    <div class="scroll-line"></div>
+  </div>
+</section>
+
+<!-- carrusel de tecnologías -->
+<div class="ticker-wrap">
+  <div class="ticker-track" id="tickerTrack"></div>
+</div>
+
+<!-- sobre mí -->
+<section id="about" class="section">
+  <div class="container">
+    <div class="about-grid">
+
+      <!-- Text side -->
+      <div class="reveal-left">
+        <img
+          src="assets/img/bruno-albin.jpg"
+          alt="Bruno Albín — Estudiante de Ingeniería en Informática Avanzada"
+          class="profile-pic"
+          width="88"
+          height="88"
+          loading="lazy"
+          decoding="async"
+        />
+        <p class="sec-label">about_me</p>
+        <h2 class="sec-title">Un poco sobre <span class="accent">mí</span></h2>
+
+        <div class="about-text">
+          <p>
+            Soy un apasionado de la <span class="hl">tecnología y el desarrollo de software</span>,
+            actualmente cursando Ingeniería en Informática Avanzada. Me encanta tomar
+            problemas complejos y convertirlos en soluciones limpias y eficientes.
+          </p>
+          <p>
+            Me interesa especialmente la <span class="hl">Inteligencia Artificial</span> y todo
+            lo que hay detrás: desde entrenar modelos hasta integrarlos en sistemas reales.
+            Trabajo con <span class="code">Python</span> y sus ecosistemas de <span class="code">ML/AI</span>
+            para construir cosas que realmente aprendan.
+          </p>
+          <p>
+            La <span class="hl">ciberseguridad</span> también me apasiona — entender cómo funcionan
+            los ataques para poder defenderme mejor. Cuando no estoy programando, estoy
+            practicando en <span class="code">CTFs</span>, leyendo sobre
+            <span class="code">pentesting</span> o desmontando software para entender
+            qué hay debajo.
+          </p>
+        </div>
+
+        <div class="stat-grid">
+          <div class="stat-box">
+            <div class="stat-num" data-count="15">0</div>
+            <div class="stat-label">Proyectos completados</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-num" data-count="8">0</div>
+            <div class="stat-label">Tecnologías en stack</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-num" data-count="3">0</div>
+            <div class="stat-label">Años programando</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-num">∞</div>
+            <div class="stat-label">Bugs resueltos*</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Terminal side -->
+      <div class="reveal-right" style="transition-delay:.18s">
+        <div class="terminal">
+          <div class="term-bar">
+            <div class="tdot r"></div>
+            <div class="tdot y"></div>
+            <div class="tdot g"></div>
+            <span class="term-title">~/about.json</span>
+          </div>
+          <div class="term-body">
+            <div class="tl"><span class="tl-p">~</span><span class="tl-d">/about</span><span class="tl-c">&nbsp;$&nbsp;cat me.json</span></div>
+            <div class="t-gap"></div>
+            <div class="to">{</div>
+            <div class="to">&nbsp;&nbsp;<span class="k">"nombre"</span>: <span class="s">"Bruno Albín"</span>,</div>
+            <div class="to">&nbsp;&nbsp;<span class="k">"rol"</span>: <span class="s">"Ing. Informática"</span>,</div>
+            <div class="to">&nbsp;&nbsp;<span class="k">"ubicacion"</span>: <span class="s">"Montevideo, Uruguay"</span>,</div>
+            <div class="to">&nbsp;&nbsp;<span class="k">"disponible"</span>: <span class="v">true</span>,</div>
+            <div class="to">&nbsp;&nbsp;<span class="k">"intereses"</span>: [</div>
+            <div class="to">&nbsp;&nbsp;&nbsp;&nbsp;<span class="s">"System Design"</span>,</div>
+            <div class="to">&nbsp;&nbsp;&nbsp;&nbsp;<span class="s">"Cybersecurity"</span>,</div>
+            <div class="to">&nbsp;&nbsp;&nbsp;&nbsp;<span class="s">"Machine Learning"</span>,</div>
+            <div class="to">&nbsp;&nbsp;&nbsp;&nbsp;<span class="s">"DevOps"</span></div>
+            <div class="to">&nbsp;&nbsp;],</div>
+            <div class="to">&nbsp;&nbsp;<span class="k">"cafe_diario"</span>: <span class="v">9999</span></div>
+            <div class="to">}</div>
+            <div class="t-gap"></div>
+            <div class="tl"><span class="tl-p">~</span><span class="tl-d">/about</span>&nbsp;$ <span class="type-cur"></span></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- habilidades técnicas -->
+<section id="skills" class="section">
+  <div class="container">
+    <div class="skills-intro reveal">
+      <p class="sec-label">stack_tecnologico</p>
+      <h2 class="sec-title">Tecnologías que <span class="accent">utilizo</span></h2>
+    </div>
+
+    <div class="skills-grid">
+      <div class="skill-cat reveal" style="transition-delay:.05s">
+        <div class="skill-cat-name"><i class="fas fa-code"></i> Lenguajes</div>
+        <div class="tags">
+          <span class="tag hi">Python</span>
+          <span class="tag hi">JavaScript</span>
+          <span class="tag hi">Java</span>
+          <span class="tag">TypeScript</span>
+          <span class="tag">C / C++</span>
+          <span class="tag">Bash</span>
+          <span class="tag">SQL</span>
+        </div>
+      </div>
+
+      <div class="skill-cat reveal" style="transition-delay:.12s">
+        <div class="skill-cat-name"><i class="fas fa-layer-group"></i> Frameworks</div>
+        <div class="tags">
+          <span class="tag hi">React</span>
+          <span class="tag">Node.js</span>
+          <span class="tag">Express</span>
+          <span class="tag">Django</span>
+          <span class="tag">FastAPI</span>
+          <span class="tag">Spring Boot</span>
+        </div>
+      </div>
+
+      <div class="skill-cat reveal" style="transition-delay:.19s">
+        <div class="skill-cat-name"><i class="fas fa-database"></i> Bases de Datos</div>
+        <div class="tags">
+          <span class="tag hi">PostgreSQL</span>
+          <span class="tag hi">MongoDB</span>
+          <span class="tag">MySQL</span>
+          <span class="tag">Redis</span>
+          <span class="tag">SQLite</span>
+        </div>
+      </div>
+
+      <div class="skill-cat reveal" style="transition-delay:.26s">
+        <div class="skill-cat-name"><i class="fas fa-server"></i> DevOps &amp; Tools</div>
+        <div class="tags">
+          <span class="tag hi">Git</span>
+          <span class="tag hi">Linux</span>
+          <span class="tag">Docker</span>
+          <span class="tag">GitHub Actions</span>
+          <span class="tag">Nginx</span>
+          <span class="tag">AWS</span>
+          <span class="tag">Vim</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- proyectos -->
+<section id="projects" class="section">
+  <div class="container">
+    <div class="proj-header reveal">
+      <div>
+        <p class="sec-label">proyectos_destacados</p>
+        <h2 class="sec-title">Lo que he <span class="accent">construido</span></h2>
+      </div>
+      <a href="https://github.com/brunoalbin23" target="_blank" rel="noopener noreferrer" class="proj-more">
+        Ver en GitHub <i class="fas fa-arrow-right"></i>
+      </a>
+    </div>
+
+    <div class="proj-grid">
+
+      <!-- ── Featured ── -->
+      <div class="proj-card feat reveal">
+        <div class="feat-img"><i class="fas fa-network-wired"></i></div>
+        <div class="proj-body">
+          <div class="proj-n">// Proyecto Destacado</div>
+          <div class="proj-title">Sistema de Gestión Distribuida</div>
+          <p class="proj-desc">
+            Plataforma web fullstack para monitoreo de sistemas distribuidos.
+            Incluye autenticación JWT, dashboard en tiempo real con WebSockets,
+            API RESTful robusta y despliegue containerizado con Docker Compose.
+          </p>
+          <div class="stack">
+            <span class="stag">React</span>
+            <span class="stag">Node.js</span>
+            <span class="stag">PostgreSQL</span>
+            <span class="stag">Docker</span>
+            <span class="stag">WebSockets</span>
+            <span class="stag">JWT</span>
+          </div>
+          <div class="feat-actions">
+            <a href="#" class="btn btn-outline btn-sm">
+              <i class="fab fa-github"></i> Código
+            </a>
+            <a href="#" class="btn btn-primary btn-sm">
+              <i class="fas fa-external-link-alt"></i> Demo
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── Card 1 ── -->
+      <div class="proj-card reveal" style="transition-delay:.08s">
+        <div class="proj-top">
+          <div class="proj-ico"><i class="fas fa-robot"></i></div>
+          <div class="proj-lnks">
+            <a href="#" title="GitHub"><i class="fab fa-github"></i></a>
+            <a href="#" title="Live"><i class="fas fa-external-link-alt"></i></a>
+          </div>
+        </div>
+        <div class="proj-body">
+          <div class="proj-n">// 001</div>
+          <div class="proj-title">ML Classifier API</div>
+          <p class="proj-desc">
+            API REST para clasificación de imágenes con modelos de ML.
+            Entrenado con TensorFlow, desplegado con FastAPI y Docker.
+          </p>
+          <div class="stack">
+            <span class="stag">Python</span>
+            <span class="stag">TensorFlow</span>
+            <span class="stag">FastAPI</span>
+            <span class="stag">Docker</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── Card 2 ── -->
+      <div class="proj-card reveal" style="transition-delay:.16s">
+        <div class="proj-top">
+          <div class="proj-ico"><i class="fas fa-terminal"></i></div>
+          <div class="proj-lnks">
+            <a href="#" title="GitHub"><i class="fab fa-github"></i></a>
+            <a href="#" title="Live"><i class="fas fa-external-link-alt"></i></a>
+          </div>
+        </div>
+        <div class="proj-body">
+          <div class="proj-n">// 002</div>
+          <div class="proj-title">DevTools CLI</div>
+          <p class="proj-desc">
+            Herramienta de línea de comandos para automatizar el flujo de trabajo.
+            Scaffolding de proyectos, gestión de entornos y utilidades Git.
+          </p>
+          <div class="stack">
+            <span class="stag">Python</span>
+            <span class="stag">Click</span>
+            <span class="stag">Rich</span>
+            <span class="stag">PyPI</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── Card 3 ── -->
+      <div class="proj-card reveal" style="transition-delay:.24s">
+        <div class="proj-top">
+          <div class="proj-ico"><i class="fas fa-shield-alt"></i></div>
+          <div class="proj-lnks">
+            <a href="#" title="GitHub"><i class="fab fa-github"></i></a>
+            <a href="#" title="Live"><i class="fas fa-external-link-alt"></i></a>
+          </div>
+        </div>
+        <div class="proj-body">
+          <div class="proj-n">// 003</div>
+          <div class="proj-title">Auth Microservice</div>
+          <p class="proj-desc">
+            Microservicio de autenticación con OAuth2, JWT y RBAC.
+            Arquitectura orientada a eventos con Redis y listo para producción.
+          </p>
+          <div class="stack">
+            <span class="stag">Java</span>
+            <span class="stag">Spring Boot</span>
+            <span class="stag">Redis</span>
+            <span class="stag">JWT</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- contacto -->
+<section id="contact" class="section">
+  <div class="container">
+    <div class="contact-wrap reveal">
+      <p class="sec-label">contacto</p>
+      <h2 class="sec-title">¿Hablamos <span class="accent">?</span></h2>
+      <p class="contact-sub">
+        Ya sea que tengas un proyecto en mente, quieras colaborar o simplemente
+        charlar sobre tecnología — mi bandeja siempre está abierta.
+      </p>
+
+      <!-- Formspree: registrate en https://formspree.io y reemplazá YOUR_FORM_ID -->
+      <form class="cform" id="cform" onsubmit="handleForm(event)" novalidate>
+        <div class="fg">
+          <label for="f-name">NOMBRE</label>
+          <input id="f-name" name="name" type="text" placeholder="Bruno Albín" required />
+        </div>
+        <div class="fg">
+          <label for="f-email">EMAIL</label>
+          <input id="f-email" name="email" type="email" placeholder="tu@email.com" required />
+        </div>
+        <div class="fg full">
+          <label for="f-subject">ASUNTO</label>
+          <input id="f-subject" name="subject" type="text" placeholder="¿De qué quieres hablar?" />
+        </div>
+        <div class="fg full">
+          <label for="f-msg">MENSAJE</label>
+          <textarea id="f-msg" name="message" placeholder="Cuéntame..." required></textarea>
+        </div>
+        <div class="fg center">
+          <button type="submit" class="btn-send" id="sendBtn">
+            <i class="fas fa-paper-plane"></i>&nbsp; Enviar mensaje
+          </button>
+        </div>
+      </form>
+
+      <div class="socials">
+        <a href="https://github.com/brunoalbin23"      target="_blank" rel="noopener noreferrer" class="soc-link"><i class="fab fa-github"></i><span>GitHub</span></a>
+        <a href="https://uy.linkedin.com/in/bruno-alb%C3%ADn-36843b2a7" target="_blank" rel="noopener noreferrer" class="soc-link"><i class="fab fa-linkedin-in"></i><span>LinkedIn</span></a>
+        <a href="https://instagram.com/bruno_albin23"   target="_blank" rel="noopener noreferrer" class="soc-link"><i class="fab fa-instagram"></i><span>Instagram</span></a>
+        <a href="mailto:albinbruno23@gmail.com"                    class="soc-link"><i class="fas fa-envelope"></i><span>Email</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- footer -->
+<footer>
+  <div class="foot-l"><span>// </span>diseñado &amp; construido por <span>Bruno Albín</span></div>
+  <div class="foot-copy">© <span id="foot-year">2026</span> Bruno Albín — Todos los derechos reservados.</div>
+  <div class="foot-r">hecho con <span class="heart">♥</span> &amp; mucho café</div>
+</footer>
+
+<script src="assets/js/main.js" defer></script>
+</body>
+</html>

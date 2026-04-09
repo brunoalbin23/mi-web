@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://brunoalbin23.github.io/mi-portfolio/sitemap.xml
