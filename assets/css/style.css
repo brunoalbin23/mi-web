@@ -192,6 +192,34 @@ body {
 .nav-cta { color: var(--cyan) !important; border: 1px solid var(--cyan); padding: .35rem .95rem; border-radius: 4px; }
 .nav-cta:hover { background: var(--cyan-10) !important; }
 
+/* Language toggle switch */
+.lang-switch {
+  display: flex; align-items: center; gap: .4rem;
+  cursor: pointer; user-select: none;
+}
+.ls-opt {
+  font-family: var(--mono); font-size: .72rem; font-weight: 600;
+  letter-spacing: .08em; color: var(--dim);
+  transition: color .22s;
+}
+.ls-opt.active { color: var(--cyan); }
+.ls-track {
+  width: 34px; height: 18px;
+  background: var(--bg-3); border: 1px solid var(--border);
+  border-radius: 99px; position: relative;
+  transition: border-color .25s var(--ease), background .25s var(--ease);
+}
+.ls-thumb {
+  position: absolute; top: 2px; left: 2px;
+  width: 12px; height: 12px;
+  background: var(--cyan); border-radius: 50%;
+  box-shadow: 0 0 8px rgba(0,212,255,.55);
+  transition: transform .25s var(--ease);
+}
+.lang-switch:hover .ls-track { border-color: var(--cyan); }
+.lang-switch.en .ls-thumb    { transform: translateX(16px); }
+.lang-switch.en .ls-track    { border-color: var(--cyan); background: var(--cyan-10); }
+
 /* Hamburger */
 #ham { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: .25rem; }
 #ham span { display: block; width: 24px; height: 2px; background: var(--cyan); transition: all .3s; }

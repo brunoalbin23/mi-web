@@ -69,7 +69,7 @@
 <body>
 
 <!-- enlace de accesibilidad: visible al recibir foco con Tab -->
-<a href="#hero" class="skip-nav">Saltar al contenido principal</a>
+<a href="#hero" class="skip-nav" data-i18n="skip_nav">Saltar al contenido principal</a>
 
 <!-- cursor personalizado (solo desktop, oculto en táctil por CSS) -->
 <div id="cur-dot" aria-hidden="true"></div>
@@ -79,11 +79,16 @@
 <nav id="nav" aria-label="Navegación principal">
   <a href="#hero" class="nav-logo">&lt;<span>dev</span>/&gt;</a>
   <ul class="nav-links" id="navLinks" role="list">
-    <li><a href="#about"    data-n="01." data-s="about">Sobre mí</a></li>
-    <li><a href="#skills"   data-n="02." data-s="skills">Skills</a></li>
-    <li><a href="#projects" data-n="03." data-s="projects">Proyectos</a></li>
-    <li><a href="#contact"  data-n="04." data-s="contact" class="nav-cta">Contacto</a></li>
+    <li><a href="#about"    data-n="01." data-s="about"    data-i18n="nav_about">Sobre mí</a></li>
+    <li><a href="#skills"   data-n="02." data-s="skills"   data-i18n="nav_skills">Skills</a></li>
+    <li><a href="#projects" data-n="03." data-s="projects" data-i18n="nav_projects">Proyectos</a></li>
+    <li><a href="#contact"  data-n="04." data-s="contact"  class="nav-cta" data-i18n="nav_contact">Contacto</a></li>
   </ul>
+  <div class="lang-switch" id="lang-toggle" role="button" tabindex="0" aria-label="Switch to English">
+    <span class="ls-opt ls-es active">ESPAÑOL</span>
+    <div class="ls-track"><div class="ls-thumb"></div></div>
+    <span class="ls-opt ls-en">ENGLISH</span>
+  </div>
   <button id="ham" aria-label="Abrir menú" aria-expanded="false" aria-controls="navLinks">
     <span></span><span></span><span></span>
   </button>
@@ -95,7 +100,7 @@
 
   <div class="container">
     <div class="hero-inner">
-      <p class="hero-hello">Hola mundo, soy</p>
+      <p class="hero-hello" data-i18n="hero_hello">Hola mundo, soy</p>
 
       <h1 class="hero-name">
         <span class="line1">Bruno</span>
@@ -108,17 +113,17 @@
         <span class="type-cur"></span>
       </div>
 
-      <p class="hero-desc">
+      <p class="hero-desc" data-i18n="hero_desc">
         Estudiante de <strong>5to año de Ingeniería en Informática </strong> apasionado
         por construir soluciones elegantes a problemas complejos.
         Del algoritmo al producto final.
       </p>
 
       <div class="hero-btns">
-        <a href="#projects" class="btn btn-primary">
+        <a href="#projects" class="btn btn-primary" data-i18n="hero_btn_projects">
           <i class="fas fa-terminal"></i> ./ver-proyectos
         </a>
-        <a href="docs/cv.pdf" download="CV-Bruno-Albin.pdf" rel="noopener noreferrer" class="btn btn-outline">
+        <a href="docs/cv.pdf" download="CV-Bruno-Albin.pdf" rel="noopener noreferrer" class="btn btn-outline" data-i18n="hero_btn_cv">
           <i class="fas fa-file-code"></i> Descargar CV
         </a>
       </div>
@@ -126,7 +131,7 @@
   </div>
 
   <div class="hero-scroll">
-    <span>scroll</span>
+    <span data-i18n="hero_scroll">scroll</span>
     <div class="scroll-line"></div>
   </div>
 </section>
@@ -152,22 +157,22 @@
           loading="lazy"
           decoding="async"
         />
-        <p class="sec-label">about_me</p>
-        <h2 class="sec-title">Un poco sobre <span class="accent">mí</span></h2>
+        <p class="sec-label" data-i18n="about_label">about_me</p>
+        <h2 class="sec-title" data-i18n="about_title">Un poco sobre <span class="accent">mí</span></h2>
 
         <div class="about-text">
-          <p>
+          <p data-i18n="about_p1">
             Soy un apasionado de la <span class="hl">tecnología y el desarrollo de software</span>,
             actualmente cursando Ingeniería en Informática Avanzada. Me encanta tomar
             problemas complejos y convertirlos en soluciones limpias y eficientes.
           </p>
-          <p>
+          <p data-i18n="about_p2">
             Me interesa especialmente la <span class="hl">Inteligencia Artificial</span> y todo
             lo que hay detrás: desde entrenar modelos hasta integrarlos en sistemas reales.
             Trabajo con <span class="code">Python</span> y sus ecosistemas de <span class="code">ML/AI</span>
             para construir cosas que realmente aprendan.
           </p>
-          <p>
+          <p data-i18n="about_p3">
             La <span class="hl">ciberseguridad</span> también me apasiona — entender cómo funcionan
             los ataques para poder defenderme mejor. Cuando no estoy programando, estoy
             practicando en <span class="code">CTFs</span>, leyendo sobre
@@ -179,19 +184,19 @@
         <div class="stat-grid">
           <div class="stat-box">
             <div class="stat-num" data-count="15">0</div>
-            <div class="stat-label">Proyectos completados</div>
+            <div class="stat-label" data-i18n="about_stat1">Proyectos completados</div>
           </div>
           <div class="stat-box">
             <div class="stat-num" data-count="8">0</div>
-            <div class="stat-label">Tecnologías en stack</div>
+            <div class="stat-label" data-i18n="about_stat2">Tecnologías en stack</div>
           </div>
           <div class="stat-box">
             <div class="stat-num" data-count="3">0</div>
-            <div class="stat-label">Años programando</div>
+            <div class="stat-label" data-i18n="about_stat3">Años programando</div>
           </div>
           <div class="stat-box">
             <div class="stat-num">∞</div>
-            <div class="stat-label">Bugs resueltos*</div>
+            <div class="stat-label" data-i18n="about_stat4">Bugs resueltos*</div>
           </div>
         </div>
       </div>
@@ -235,13 +240,13 @@
 <section id="skills" class="section">
   <div class="container">
     <div class="skills-intro reveal">
-      <p class="sec-label">stack_tecnologico</p>
-      <h2 class="sec-title">Tecnologías que <span class="accent">utilizo</span></h2>
+      <p class="sec-label" data-i18n="skills_label">stack_tecnologico</p>
+      <h2 class="sec-title" data-i18n="skills_title">Tecnologías que <span class="accent">utilizo</span></h2>
     </div>
 
     <div class="skills-grid">
       <div class="skill-cat reveal" style="transition-delay:.05s">
-        <div class="skill-cat-name"><i class="fas fa-code"></i> Lenguajes</div>
+        <div class="skill-cat-name" data-i18n="skill_languages"><i class="fas fa-code"></i> Lenguajes</div>
         <div class="tags">
           <span class="tag hi">Python</span>
           <span class="tag hi">JavaScript</span>
@@ -253,7 +258,7 @@
       </div>
 
       <div class="skill-cat reveal" style="transition-delay:.12s">
-        <div class="skill-cat-name"><i class="fas fa-layer-group"></i> Frameworks</div>
+        <div class="skill-cat-name" data-i18n="skill_frameworks"><i class="fas fa-layer-group"></i> Frameworks</div>
         <div class="tags">
           <span class="tag hi">React</span>
           <span class="tag">Angular</span>
@@ -267,7 +272,7 @@
       </div>
 
       <div class="skill-cat reveal" style="transition-delay:.19s">
-        <div class="skill-cat-name"><i class="fas fa-database"></i> Bases de Datos</div>
+        <div class="skill-cat-name" data-i18n="skill_db"><i class="fas fa-database"></i> Bases de Datos</div>
         <div class="tags">
           <span class="tag hi">PostgreSQL</span>
           <span class="tag hi">Pgvector</span>
@@ -279,7 +284,7 @@
       </div>
 
       <div class="skill-cat reveal" style="transition-delay:.26s">
-        <div class="skill-cat-name"><i class="fas fa-server"></i> DevOps &amp; Tools</div>
+        <div class="skill-cat-name" data-i18n="skill_devops"><i class="fas fa-server"></i> DevOps &amp; Tools</div>
         <div class="tags">
           <span class="tag hi">Git</span>
           <span class="tag hi">Linux</span>
@@ -292,7 +297,7 @@
       </div>
 
       <div class="skill-cat reveal" style="transition-delay:.26s">
-        <div class="skill-cat-name"><i class="fas fa-robot"></i> IA</div>
+        <div class="skill-cat-name" data-i18n="skill_ai"><i class="fas fa-robot"></i> IA</div>
         <div class="tags">
           <span class="tag hi">LangChain</span>
           <span class="tag hi">RAG</span>
@@ -308,10 +313,10 @@
   <div class="container">
     <div class="proj-header reveal">
       <div>
-        <p class="sec-label">proyectos_destacados</p>
-        <h2 class="sec-title">Lo que he <span class="accent">construido</span></h2>
+        <p class="sec-label" data-i18n="proj_label">proyectos_destacados</p>
+        <h2 class="sec-title" data-i18n="proj_title">Lo que he <span class="accent">construido</span></h2>
       </div>
-      <a href="https://github.com/brunoalbin23" target="_blank" rel="noopener noreferrer" class="proj-more">
+      <a href="https://github.com/brunoalbin23" target="_blank" rel="noopener noreferrer" class="proj-more" data-i18n="proj_github">
         Ver en GitHub <i class="fas fa-arrow-right"></i>
       </a>
     </div>
@@ -326,9 +331,9 @@
           width="350"
         /></div>
         <div class="proj-body">
-          <div class="proj-n">// Proyecto Destacado</div>
+          <div class="proj-n" data-i18n="proj_feat">// Proyecto Destacado</div>
           <div class="proj-title">AURA — Asistente Unificado de Respuesta Avanzada</div>
-          <p class="proj-desc">
+          <p class="proj-desc" data-i18n="proj_aura_desc">
             Plataforma de consulta documental con IA para la Fuerza Aérea Uruguaya.
             Implementa un pipeline RAG completo sobre documentos institucionales con
             arquitectura semi-microservicios, LLM local, autenticación JWT con RBAC
@@ -347,7 +352,7 @@
             <span class="stag">JWT</span>
           </div>
           <div class="feat-actions">
-            <a class="btn btn-primary btn-sm">
+            <a class="btn btn-primary btn-sm" data-i18n="proj_aura_btn">
               <i class="fas fa-spinner"></i> En desarrollo - Tesis de Grado
             </a>
           </div>
@@ -364,8 +369,8 @@
         </div>
         <div class="proj-body">
           <div class="proj-n">// 001</div>
-          <div class="proj-title">Sakina — Tienda Esotérica</div>
-          <p class="proj-desc">
+          <div class="proj-title" data-i18n="proj1_title">Sakina — Tienda Esotérica</div>
+          <p class="proj-desc" data-i18n="proj1_desc">
             Ecommerce completo con catálogo, carrito y pedidos por WhatsApp.
             Panel de administración propio con Supabase Auth y gestión de
             productos.
@@ -396,8 +401,8 @@
         </div>
         <div class="proj-body">
           <div class="proj-n">// 002</div>
-          <div class="proj-title">¡Carloncho!</div>
-          <p class="proj-desc">
+          <div class="proj-title" data-i18n="proj2_title">¡Carloncho!</div>
+          <p class="proj-desc" data-i18n="proj2_desc">
             Juego mobile multijugador de cartas, diseño minimalista y simple.
             Uso de supabase, actualmente no hosteado, solución real a problema con amigos.
           </p>
@@ -425,8 +430,8 @@
         </div>
         <div class="proj-body">
           <div class="proj-n">// 003</div>
-          <div class="proj-title">Ferreiro &amp; Asociados</div>
-          <p class="proj-desc">
+          <div class="proj-title" data-i18n="proj3_title">Ferreiro &amp; Asociados</div>
+          <p class="proj-desc" data-i18n="proj3_desc">
             Landing page para estudio jurídico boutique en Montevideo.
             Diseño cálido, SEO optimizado, parallax y formulario de contacto.
           </p>
@@ -453,8 +458,8 @@
         </div>
         <div class="proj-body">
           <div class="proj-n">// 004</div>
-          <div class="proj-title">Penca - Copa América 2024</div>
-          <p class="proj-desc">
+          <div class="proj-title" data-i18n="proj4_title">Penca - Copa América 2024</div>
+          <p class="proj-desc" data-i18n="proj4_desc">
             "Penca" de torneo Copa América 2024.
             Permite a estudiantes UCU registrarse, ingresar predicciones y seguir resultados
             en tiempo real.
@@ -484,8 +489,8 @@
         </div>
         <div class="proj-body">
           <div class="proj-n">// 005</div>
-          <div class="proj-title">E-commerce — Testing & QA</div>
-          <p class="proj-desc">
+          <div class="proj-title" data-i18n="proj5_title">E-commerce — Testing & QA</div>
+          <p class="proj-desc" data-i18n="proj5_desc">
             E-commerce con múltiples bugs, sobre la cual se aplicaron ciclos de testing, identificación de fallos
             y correcciones en el marco de la materia "Testing".
           </p>
@@ -514,8 +519,8 @@
         </div>  
         <div class="proj-body">
           <div class="proj-n">// 006</div>
-          <div class="proj-title">Trello Clone</div>
-          <p class="proj-desc">
+          <div class="proj-title" data-i18n="proj6_title">Trello Clone</div>
+          <p class="proj-desc" data-i18n="proj6_desc">
             Gestor de tareas estilo Trello.
             Permite crear tableros, listas y tarjetas, con persistencia
             en base de datos y despliegue containerizado.
@@ -542,9 +547,9 @@
 <section id="contact" class="section">
   <div class="container">
     <div class="contact-wrap reveal">
-      <p class="sec-label">contacto</p>
-      <h2 class="sec-title">¿Hablamos <span class="accent">?</span></h2>
-      <p class="contact-sub">
+      <p class="sec-label" data-i18n="contact_label">contacto</p>
+      <h2 class="sec-title" data-i18n="contact_title">¿Hablamos <span class="accent">?</span></h2>
+      <p class="contact-sub" data-i18n="contact_sub">
         Ya sea que tengas un proyecto en mente, quieras colaborar o simplemente
         charlar sobre tecnología — mi bandeja siempre está abierta.
       </p>
@@ -552,23 +557,23 @@
       <!-- Formspree: registrate en https://formspree.io y reemplazá YOUR_FORM_ID -->
       <form class="cform" id="cform" onsubmit="handleForm(event)" novalidate>
         <div class="fg">
-          <label for="f-name">NOMBRE</label>
-          <input id="f-name" name="name" type="text" placeholder="Bruno Albín" required />
+          <label for="f-name" data-i18n="contact_name">NOMBRE</label>
+          <input id="f-name" name="name" type="text" placeholder="Bruno Albín" data-i18n-ph="contact_name_ph" required />
         </div>
         <div class="fg">
-          <label for="f-email">EMAIL</label>
-          <input id="f-email" name="email" type="email" placeholder="tu@email.com" required />
+          <label for="f-email" data-i18n="contact_email_label">EMAIL</label>
+          <input id="f-email" name="email" type="email" placeholder="tu@email.com" data-i18n-ph="contact_email_ph" required />
         </div>
         <div class="fg full">
-          <label for="f-subject">ASUNTO</label>
-          <input id="f-subject" name="subject" type="text" placeholder="¿De qué quieres hablar?" />
+          <label for="f-subject" data-i18n="contact_subject">ASUNTO</label>
+          <input id="f-subject" name="subject" type="text" placeholder="¿De qué quieres hablar?" data-i18n-ph="contact_subject_ph" />
         </div>
         <div class="fg full">
-          <label for="f-msg">MENSAJE</label>
-          <textarea id="f-msg" name="message" placeholder="Cuéntame..." required></textarea>
+          <label for="f-msg" data-i18n="contact_msg">MENSAJE</label>
+          <textarea id="f-msg" name="message" placeholder="Cuéntame..." data-i18n-ph="contact_msg_ph" required></textarea>
         </div>
         <div class="fg center">
-          <button type="submit" class="btn-send" id="sendBtn">
+          <button type="submit" class="btn-send" id="sendBtn" data-i18n="contact_send">
             <i class="fas fa-paper-plane"></i>&nbsp; Enviar mensaje
           </button>
         </div>
@@ -586,9 +591,9 @@
 
 <!-- footer -->
 <footer>
-  <div class="foot-l"><span>// </span>diseñado &amp; construido por <span>mi :/</span></div>
-  <div class="foot-copy">© <span id="foot-year">2026</span> Bruno Albín — Todos los derechos reservados.</div>
-  <div class="foot-r">me gusta el café je :)</div>
+  <div class="foot-l" data-i18n="footer_l"><span>// </span>diseñado &amp; construido por <span>mi :/</span></div>
+  <div class="foot-copy" data-i18n="footer_copy">© 2026 Bruno Albín — Todos los derechos reservados.</div>
+  <div class="foot-r" data-i18n="footer_r">me gusta el café je :)</div>
 </footer>
 
 <script src="assets/js/main.js" defer></script>

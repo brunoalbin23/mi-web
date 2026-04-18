@@ -1,5 +1,188 @@
-/* ── AÑO DINÁMICO ───────────────────────────── */
-document.getElementById('foot-year').textContent = new Date().getFullYear();
+/* ── TRANSLATIONS ────────────────────────── */
+const T = {
+  es: {
+    skip_nav: 'Saltar al contenido principal',
+    nav_about: 'Sobre mí',
+    nav_skills: 'Skills',
+    nav_projects: 'Proyectos',
+    nav_contact: 'Contacto',
+    ham_open: 'Abrir menú',
+    ham_close: 'Cerrar menú',
+    hero_hello: 'Hola mundo, soy',
+    hero_desc: 'Estudiante de <strong>5to año de Ingeniería en Informática </strong> apasionado por construir soluciones elegantes a problemas complejos. Del algoritmo al producto final.',
+    hero_btn_projects: '<i class="fas fa-terminal"></i> ./ver-proyectos',
+    hero_btn_cv: '<i class="fas fa-file-code"></i> Descargar CV',
+    hero_scroll: 'scroll',
+    about_label: 'about_me',
+    about_title: 'Un poco sobre <span class="accent">mí</span>',
+    about_p1: 'Soy un apasionado de la <span class="hl">tecnología y el desarrollo de software</span>, actualmente cursando Ingeniería en Informática Avanzada. Me encanta tomar problemas complejos y convertirlos en soluciones limpias y eficientes.',
+    about_p2: 'Me interesa especialmente la <span class="hl">Inteligencia Artificial</span> y todo lo que hay detrás: desde entrenar modelos hasta integrarlos en sistemas reales. Trabajo con <span class="code">Python</span> y sus ecosistemas de <span class="code">ML/AI</span> para construir cosas que realmente aprendan.',
+    about_p3: 'La <span class="hl">ciberseguridad</span> también me apasiona — entender cómo funcionan los ataques para poder defenderme mejor. Cuando no estoy programando, estoy practicando en <span class="code">CTFs</span>, leyendo sobre <span class="code">pentesting</span> o desmontando software para entender qué hay debajo.',
+    about_stat1: 'Proyectos completados',
+    about_stat2: 'Tecnologías en stack',
+    about_stat3: 'Años programando',
+    about_stat4: 'Bugs resueltos*',
+    skills_label: 'stack_tecnologico',
+    skills_title: 'Tecnologías que <span class="accent">utilizo</span>',
+    skill_languages: '<i class="fas fa-code"></i> Lenguajes',
+    skill_frameworks: '<i class="fas fa-layer-group"></i> Frameworks',
+    skill_db: '<i class="fas fa-database"></i> Bases de Datos',
+    skill_devops: '<i class="fas fa-server"></i> DevOps &amp; Tools',
+    skill_ai: '<i class="fas fa-robot"></i> IA',
+    proj_label: 'proyectos_destacados',
+    proj_title: 'Lo que he <span class="accent">construido</span>',
+    proj_github: 'Ver en GitHub <i class="fas fa-arrow-right"></i>',
+    proj_feat: '// Proyecto Destacado',
+    proj_aura_desc: 'Plataforma de consulta documental con IA para la Fuerza Aérea Uruguaya. Implementa un pipeline RAG completo sobre documentos institucionales con arquitectura semi-microservicios, LLM local, autenticación JWT con RBAC jerárquico y panel de administración centralizado.',
+    proj_aura_btn: '<i class="fas fa-spinner"></i> En desarrollo - Tesis de Grado',
+    proj1_title: 'Sakina — Tienda Esotérica',
+    proj1_desc: 'Ecommerce completo con catálogo, carrito y pedidos por WhatsApp. Panel de administración propio con Supabase Auth y gestión de productos.',
+    proj2_title: '¡Carloncho!',
+    proj2_desc: 'Juego mobile multijugador de cartas, diseño minimalista y simple. Uso de supabase, actualmente no hosteado, solución real a problema con amigos.',
+    proj3_title: 'Ferreiro &amp; Asociados',
+    proj3_desc: 'Landing page para estudio jurídico boutique en Montevideo. Diseño cálido, SEO optimizado, parallax y formulario de contacto.',
+    proj4_title: 'Penca - Copa América 2024',
+    proj4_desc: '"Penca" de torneo Copa América 2024. Permite a estudiantes UCU registrarse, ingresar predicciones y seguir resultados en tiempo real.',
+    proj5_title: 'E-commerce — Testing &amp; QA',
+    proj5_desc: 'E-commerce con múltiples bugs, sobre la cual se aplicaron ciclos de testing, identificación de fallos y correcciones en el marco de la materia "Testing".',
+    proj6_title: 'Trello Clone',
+    proj6_desc: 'Gestor de tareas estilo Trello. Permite crear tableros, listas y tarjetas, con persistencia en base de datos y despliegue containerizado.',
+    contact_label: 'contacto',
+    contact_title: '¿Hablamos <span class="accent">?</span>',
+    contact_sub: 'Ya sea que tengas un proyecto en mente, quieras colaborar o simplemente charlar sobre tecnología — mi bandeja siempre está abierta.',
+    contact_name: 'NOMBRE',
+    contact_name_ph: 'Bruno Albín',
+    contact_email_label: 'EMAIL',
+    contact_email_ph: 'tu@email.com',
+    contact_subject: 'ASUNTO',
+    contact_subject_ph: '¿De qué quieres hablar?',
+    contact_msg: 'MENSAJE',
+    contact_msg_ph: 'Cuéntame...',
+    contact_send: '<i class="fas fa-paper-plane"></i>&nbsp; Enviar mensaje',
+    form_sending: '<i class="fas fa-spinner fa-spin"></i>&nbsp; Enviando...',
+    form_sent: '<i class="fas fa-check"></i>&nbsp; ¡Enviado!',
+    form_error: '<i class="fas fa-times"></i>&nbsp; Error al enviar',
+    footer_copy: '© {year} Bruno Albín — Todos los derechos reservados.',
+    footer_l: '<span>// </span>diseñado &amp; construido por <span>mi :/</span>',
+    footer_r: 'me gusta el café je :)',
+    phrases: [
+      'Estudiante de Ingeniería',
+      'Full Stack Developer',
+      'Problem Solver',
+      'Open Source Enthusiast',
+      'Linux Enjoyer 🐧',
+      'Coffee-Driven Coder ☕'
+    ],
+  },
+  en: {
+    skip_nav: 'Skip to main content',
+    nav_about: 'About me',
+    nav_skills: 'Skills',
+    nav_projects: 'Projects',
+    nav_contact: 'Contact',
+    ham_open: 'Open menu',
+    ham_close: 'Close menu',
+    hero_hello: "Hello world, I'm",
+    hero_desc: '<strong>5th year Computer Engineering</strong> student passionate about building elegant solutions to complex problems. From algorithm to final product.',
+    hero_btn_projects: '<i class="fas fa-terminal"></i> ./view-projects',
+    hero_btn_cv: '<i class="fas fa-file-code"></i> Download CV',
+    hero_scroll: 'scroll',
+    about_label: 'about_me',
+    about_title: 'A bit about <span class="accent">me</span>',
+    about_p1: "I'm passionate about <span class=\"hl\">technology and software development</span>, currently studying Advanced Computer Engineering. I love taking complex problems and turning them into clean, efficient solutions.",
+    about_p2: "I'm especially interested in <span class=\"hl\">Artificial Intelligence</span> and everything behind it: from training models to integrating them into real systems. I work with <span class=\"code\">Python</span> and its <span class=\"code\">ML/AI</span> ecosystems to build things that actually learn.",
+    about_p3: "<span class=\"hl\">Cybersecurity</span> also fascinates me — understanding how attacks work so I can defend better. When I'm not coding, I'm practicing in <span class=\"code\">CTFs</span>, reading about <span class=\"code\">pentesting</span> or taking apart software to understand what's underneath.",
+    about_stat1: 'Completed projects',
+    about_stat2: 'Technologies in stack',
+    about_stat3: 'Years coding',
+    about_stat4: 'Bugs resolved*',
+    skills_label: 'tech_stack',
+    skills_title: 'Technologies I <span class="accent">use</span>',
+    skill_languages: '<i class="fas fa-code"></i> Languages',
+    skill_frameworks: '<i class="fas fa-layer-group"></i> Frameworks',
+    skill_db: '<i class="fas fa-database"></i> Databases',
+    skill_devops: '<i class="fas fa-server"></i> DevOps &amp; Tools',
+    skill_ai: '<i class="fas fa-robot"></i> AI',
+    proj_label: 'featured_projects',
+    proj_title: "What I've <span class=\"accent\">built</span>",
+    proj_github: 'View on GitHub <i class="fas fa-arrow-right"></i>',
+    proj_feat: '// Featured Project',
+    proj_aura_desc: 'AI-powered document consultation platform for the Uruguayan Air Force. Implements a complete RAG pipeline over institutional documents with semi-microservices architecture, local LLM, JWT authentication with hierarchical RBAC and centralized admin panel.',
+    proj_aura_btn: '<i class="fas fa-spinner"></i> In development - Senior Thesis',
+    proj1_title: 'Sakina — Esoteric Store',
+    proj1_desc: 'Full e-commerce with catalog, cart and WhatsApp orders. Custom admin panel with Supabase Auth and product management.',
+    proj2_title: '¡Carloncho!',
+    proj2_desc: 'Multiplayer mobile card game with minimalist design. Uses Supabase, currently not hosted, a real solution to a problem among friends.',
+    proj3_title: 'Ferreiro &amp; Associates',
+    proj3_desc: 'Landing page for a boutique law firm in Montevideo. Warm design, SEO optimized, parallax and contact form.',
+    proj4_title: 'Penca - Copa América 2024',
+    proj4_desc: 'Copa América 2024 tournament bracket game. Allows UCU students to register, enter predictions and follow results in real time.',
+    proj5_title: 'E-commerce — Testing &amp; QA',
+    proj5_desc: 'E-commerce with multiple bugs, on which testing cycles, fault identification and corrections were applied as part of the "Testing" course.',
+    proj6_title: 'Trello Clone',
+    proj6_desc: 'Trello-style task manager. Allows creating boards, lists and cards, with database persistence and containerized deployment.',
+    contact_label: 'contact',
+    contact_title: "Let's <span class=\"accent\">talk?</span>",
+    contact_sub: 'Whether you have a project in mind, want to collaborate, or just chat about technology — my inbox is always open.',
+    contact_name: 'NAME',
+    contact_name_ph: 'Bruno Albín',
+    contact_email_label: 'EMAIL',
+    contact_email_ph: 'your@email.com',
+    contact_subject: 'SUBJECT',
+    contact_subject_ph: 'What do you want to talk about?',
+    contact_msg: 'MESSAGE',
+    contact_msg_ph: 'Tell me...',
+    contact_send: '<i class="fas fa-paper-plane"></i>&nbsp; Send message',
+    form_sending: '<i class="fas fa-spinner fa-spin"></i>&nbsp; Sending...',
+    form_sent: '<i class="fas fa-check"></i>&nbsp; Sent!',
+    form_error: '<i class="fas fa-times"></i>&nbsp; Error sending',
+    footer_copy: '© {year} Bruno Albín — All rights reserved.',
+    footer_l: '<span>// </span>designed &amp; built by <span>me :/</span>',
+    footer_r: 'I like coffee lol :)',
+    phrases: [
+      'Engineering Student',
+      'Full Stack Developer',
+      'Problem Solver',
+      'Open Source Enthusiast',
+      'Linux Enjoyer 🐧',
+      'Coffee-Driven Coder ☕'
+    ],
+  }
+};
+
+let currentLang = localStorage.getItem('lang') || 'es';
+
+function applyLang(lang) {
+  currentLang = lang;
+  localStorage.setItem('lang', lang);
+  document.documentElement.lang = lang;
+
+  const t = T[lang];
+
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.dataset.i18n;
+    if (!t[key] || typeof t[key] !== 'string') return;
+    el.innerHTML = t[key].replace('{year}', new Date().getFullYear());
+  });
+
+  document.querySelectorAll('[data-i18n-ph]').forEach(el => {
+    const key = el.dataset.i18nPh;
+    if (t[key]) el.placeholder = t[key];
+  });
+
+  document.getElementById('nav').setAttribute('aria-label',
+    lang === 'es' ? 'Navegación principal' : 'Main navigation');
+
+  const langSwitch = document.getElementById('lang-toggle');
+  langSwitch.classList.toggle('en', lang === 'en');
+  langSwitch.querySelector('.ls-es').classList.toggle('active', lang === 'es');
+  langSwitch.querySelector('.ls-en').classList.toggle('active', lang === 'en');
+  langSwitch.setAttribute('aria-label', lang === 'es' ? 'Switch to English' : 'Cambiar a Español');
+
+  const hamIsOpen = document.getElementById('navLinks').classList.contains('open');
+  document.getElementById('ham').setAttribute('aria-label',
+    hamIsOpen ? t.ham_close : t.ham_open);
+}
 
 /* ── CURSOR ─────────────────────────────────── */
 const dot  = document.getElementById('cur-dot');
@@ -41,7 +224,6 @@ function resizeCvs() {
 resizeCvs();
 window.addEventListener('resize', resizeCvs);
 
-// pausa la matrix cuando el hero no es visible o la pestaña está en segundo plano
 let matrixPaused = false;
 new IntersectionObserver(([e]) => { matrixPaused = !e.isIntersecting; }, { threshold: 0 })
   .observe(document.getElementById('hero'));
@@ -72,22 +254,15 @@ function drawMatrix() {
 setInterval(drawMatrix, 38);
 
 /* ── TYPEWRITER ─────────────────────────────── */
-const phrases = [
-  'Estudiante de Ingeniería',
-  'Full Stack Developer',
-  'Problem Solver',
-  'Open Source Enthusiast',
-  'Linux Enjoyer 🐧',
-  'Coffee-Driven Coder ☕'
-];
 const typedEl = document.getElementById('typed-out');
 let pi = 0, ci = 0, del = false;
 
 function typewrite() {
-  const cur = phrases[pi];
+  const phrs = T[currentLang].phrases;
+  const cur = phrs[pi % phrs.length];
   typedEl.textContent = del ? cur.slice(0, --ci) : cur.slice(0, ++ci);
   if (!del && ci === cur.length) { del = true; setTimeout(typewrite, 1800); return; }
-  if (del && ci === 0)           { del = false; pi = (pi + 1) % phrases.length; }
+  if (del && ci === 0)           { del = false; pi = (pi + 1) % phrs.length; }
   setTimeout(typewrite, del ? 55 : 95);
 }
 typewrite();
@@ -143,16 +318,23 @@ const navLinks = document.getElementById('navLinks');
 hamBtn.addEventListener('click', () => {
   const isOpen = navLinks.classList.toggle('open');
   hamBtn.setAttribute('aria-expanded', isOpen);
-  hamBtn.setAttribute('aria-label', isOpen ? 'Cerrar menú' : 'Abrir menú');
+  hamBtn.setAttribute('aria-label', isOpen ? T[currentLang].ham_close : T[currentLang].ham_open);
 });
 
 document.querySelectorAll('.nav-links a').forEach(a =>
   a.addEventListener('click', () => {
     navLinks.classList.remove('open');
     hamBtn.setAttribute('aria-expanded', 'false');
-    hamBtn.setAttribute('aria-label', 'Abrir menú');
+    hamBtn.setAttribute('aria-label', T[currentLang].ham_open);
   })
 );
+
+/* ── LANG TOGGLE ────────────────────────────── */
+const langToggle = document.getElementById('lang-toggle');
+langToggle.addEventListener('click', () => applyLang(currentLang === 'es' ? 'en' : 'es'));
+langToggle.addEventListener('keydown', e => {
+  if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); applyLang(currentLang === 'es' ? 'en' : 'es'); }
+});
 
 /* ── SCROLL REVEAL ──────────────────────────── */
 const io = new IntersectionObserver(entries => {
@@ -182,7 +364,7 @@ function animCount(el) {
 async function handleForm(e) {
   e.preventDefault();
   const btn  = document.getElementById('sendBtn');
-  const orig = btn.innerHTML;
+  const orig = T[currentLang].contact_send;
   const form = e.target;
 
   const email = form.querySelector('[name=email]').value.trim();
@@ -190,7 +372,7 @@ async function handleForm(e) {
   if (!email || !msg) return;
 
   btn.disabled = true;
-  btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i>&nbsp; Enviando...';
+  btn.innerHTML = T[currentLang].form_sending;
 
   try {
     const res = await fetch('https://formspree.io/f/mojpzbdn', {
@@ -200,14 +382,14 @@ async function handleForm(e) {
     });
     const json = await res.json();
     if (res.ok) {
-      btn.innerHTML = '<i class="fas fa-check"></i>&nbsp; ¡Enviado!';
+      btn.innerHTML = T[currentLang].form_sent;
       btn.style.cssText += 'border-color:#00ff88;color:#00ff88;';
       form.reset();
     } else {
       throw new Error(json.errors ? json.errors.map(e => e.message).join(', ') : 'Error');
     }
   } catch (err) {
-    btn.innerHTML = '<i class="fas fa-times"></i>&nbsp; Error al enviar';
+    btn.innerHTML = T[currentLang].form_error;
     btn.style.cssText += 'border-color:#ff4757;color:#ff4757;';
     console.error('Formspree error:', err);
   } finally {
@@ -253,3 +435,6 @@ document.addEventListener('keydown', e => {
     setTimeout(() => toast.remove(), 5200);
   }
 });
+
+/* ── INIT ───────────────────────────────────── */
+applyLang(currentLang);
