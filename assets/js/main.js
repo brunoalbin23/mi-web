@@ -121,6 +121,8 @@ const T = {
     proj5_desc: 'E-commerce with multiple bugs, on which testing cycles, fault identification and corrections were applied as part of the "Testing" course.',
     proj6_title: 'Trello Clone',
     proj6_desc: 'Trello-style task manager. Allows creating boards, lists and cards, with database persistence and containerized deployment.',
+    proj7_title: 'Dental Clinic',
+    proj7_desc: 'Website for a dental clinic. Allows managing appointments, displaying services and testimonials, with responsive and modern design.',
     contact_label: 'contact',
     contact_title: "Let's <span class=\"accent\">talk?</span>",
     contact_sub: 'Whether you have a project in mind, want to collaborate, or just chat about technology — my inbox is always open.',
