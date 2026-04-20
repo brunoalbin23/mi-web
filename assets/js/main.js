@@ -47,6 +47,8 @@ const T = {
     proj5_desc: 'E-commerce con múltiples bugs, sobre la cual se aplicaron ciclos de testing, identificación de fallos y correcciones en el marco de la materia "Testing".',
     proj6_title: 'Trello Clone',
     proj6_desc: 'Gestor de tareas estilo Trello. Permite crear tableros, listas y tarjetas, con persistencia en base de datos y despliegue containerizado.',
+    proj7_title: 'Consultorio Odontológico',
+    proj7_desc: 'Sitio web para un consultorio odontológico. Permite gestionar citas, mostrar servicios y testimonios, con diseño responsivo y moderno.',
     contact_label: 'contacto',
     contact_title: '¿Hablamos <span class="accent">?</span>',
     contact_sub: 'Ya sea que tengas un proyecto en mente, quieras colaborar o simplemente charlar sobre tecnología — mi bandeja siempre está abierta.',
