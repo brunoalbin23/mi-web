@@ -129,7 +129,7 @@ const T = {
     proj3_desc: 'Landing page for a boutique law firm in Montevideo. Warm design, SEO optimized, parallax and contact form.',
     proj4_title: 'Penca - Copa América 2024',
     proj4_desc: 'Copa América 2024 tournament bracket game. Allows UCU students to register, enter predictions and follow results in real time.',
-    proj5_desc: 'Paid Up!',
+    proj5_title: 'Paid Up!',
     proj5_desc: 'AI-powered personal finance app. Log expenses by typing in natural language, dictating by voice, or uploading a photo of a receipt.',
     proj10_title: 'E-commerce — Testing &amp; QA',
     proj10_desc: 'E-commerce with multiple bugs, on which testing cycles, fault identification and corrections were applied as part of the "Testing" course.',
