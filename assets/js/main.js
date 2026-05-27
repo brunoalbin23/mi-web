@@ -83,7 +83,7 @@ const T = {
     form_error: '<i class="fas fa-times"></i>&nbsp; Error al enviar',
     footer_copy: '© {year} Bruno Albín - Todos los derechos reservados.',
     footer_l: '<span>// </span>diseñado &amp; construido por <span>mi :/</span>',
-    footer_r: 'me gusta el café je :)',
+    footer_r: 'Peñarol peñarolll',
     phrases: [
       'Estudiante de Ingeniería',
       'Full Stack Developer',
@@ -176,7 +176,7 @@ const T = {
     form_error: '<i class="fas fa-times"></i>&nbsp; Error sending',
     footer_copy: '© {year} Bruno Albín - All rights reserved.',
     footer_l: '<span>// </span>designed &amp; built by <span>me :/</span>',
-    footer_r: 'I like coffee lol :)',
+    footer_r: 'Peñarol peñarolll',
     phrases: [
       'Engineering Student',
       'Full Stack Developer',
